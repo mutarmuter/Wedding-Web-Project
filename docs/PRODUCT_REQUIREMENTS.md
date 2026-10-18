@@ -2,10 +2,10 @@
 
 ## Problem
 
-Abdan dan pasangannya membutuhkan media undangan pernikahan digital yang modern, elegan, dan informatif tanpa kompleksitas pengelolaan server backend. Undangan fisik konvensional memiliki keterbatasan dalam menyajikan elemen interaktif seperti pemutar audio latar, hitung mundur waktu acara, galeri foto dinamis, dan navigasi peta langsung. Diperlukan sebuah website undangan statis berperforma tinggi yang dapat di-hosting secara andal di GitHub Pages atau Cloudflare Pages dengan tema visual Minimalist & Monochrome, memuat personalisasi nama tamu via URL, serta memfasilitasi akses cepat ke detail akad nikah dan resepsi.
+Abdan dan pasangannya membutuhkan media undangan pernikahan digital yang modern, elegan, dan informatif tanpa kompleksitas pengelolaan server backend. Undangan fisik konvensional memiliki keterbatasan dalam menyajikan elemen interaktif seperti pemutar audio latar, hitung mundur waktu acara, galeri foto dinamis, dan navigasi peta langsung. Diperlukan sebuah website undangan statis berperforma tinggi yang dapat di-hosting secara andal di GitHub Pages atau Cloudflare Pages dengan tema visual Minimalist & Monochrome, memuat personalisasi nama tamu via URL, serta memfasilitasi akses cepat ke detail Akad Nikah.
 ## Target users
 
-- Tamu Undangan (Keluarga, Sahabat, dan Kolega): Mengakses undangan melalui tautan pesan instan (seperti WhatsApp) dari smartphone mereka; membutuhkan informasi acara yang jelas (waktu Akad & Resepsi), nama mereka tertera secara personal, navigasi satu klik ke Google Maps, serta pengalaman antarmuka yang bersih tanpa jeda muat yang lambat.
+- Tamu Undangan (Keluarga, Sahabat, dan Kolega): Mengakses undangan melalui tautan pesan instan (seperti WhatsApp) dari smartphone mereka; membutuhkan informasi Akad Nikah yang jelas, nama mereka tertera secara personal, navigasi satu klik ke Google Maps, serta pengalaman antarmuka yang bersih tanpa jeda muat yang lambat.
 - Calon Pengantin / Penyelenggara (Abdan & Pasangan): Menginginkan representasi acara pernikahan yang khidmat dan estetik dengan nuansa minimalis monokrom, kemudahan mengganti aset musik dan foto secara statis, serta biaya operasional nihil melalui penyedia hosting statis.
 ## Requirements
 
@@ -17,9 +17,9 @@ Menampilkan salam pembuka dan nama tamu secara otomatis di bagian cover depan be
 
 Komponen penghitung mundur interaktif yang menghitung hari, jam, menit, dan detik menuju waktu pelaksanaan pernikahan Abdan. Memiliki susunan grid yang responsif baik di smartphone layar sempit maupun desktop. Informasi pembaruan waktu dilengkapi atribut aria-live='polite' agar terbaca dengan baik oleh teknologi asistif/screen reader tanpa mengganggu fokus pengguna.
 
-### Struktur Jadwal Acara (Akad Nikah & Resepsi) dan Tombol Google Maps (P0)
+### Jadwal Akad Nikah Terpusat dan Tombol Google Maps (P0)
 
-Pemisahan kartu informasi jadwal yang tegas dan rapi antara sesi Akad Nikah dan sesi Resepsi (mencakup tanggal, jam mulai, dan teks alamat statis). Setiap sesi atau blok lokasi dilengkapi tombol Call-to-Action (CTA) 'Buka Google Maps' yang langsung membuka aplikasi peta eksternal atau tautan navigasi ke koordinat lokasi resmi. Tombol memiliki area sentuh minimal 48x48 piksel untuk kenyamanan pengguna mobile dan indikator fokus yang jelas untuk navigasi keyboard.
+Satu kartu informasi Akad Nikah yang ditampilkan di tengah area jadwal, mencakup tanggal, jam mulai, dan teks alamat statis. Kartu menyematkan tampilan Google Maps dengan penanda lokasi berdasarkan alamat resmi, serta tetap mempertahankan kontrol peta bawaan yang aksesibel.
 
 ### Bagian Teks Doa & Kutipan Bahasa Arab (P1)
 

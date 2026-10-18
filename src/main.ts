@@ -37,11 +37,38 @@ function createScheduleIcon(type: string): SVGSVGElement {
   return svg;
 }
 
-function renderWeddingContent(): void {
-  for (const id of ['demo-notice', 'schedule-notice']) {
-    const notice = document.getElementById(id);
-    if (notice) notice.hidden = !weddingData.isDemo;
+function createGoogleMapsView(session: (typeof scheduleSessions)[number]): HTMLElement {
+  const map = createElement('div', 'schedule-map');
+  const hasGoogleMapsUrl = /^https:\/\/(www\.)?google\.com\/maps\//.test(session.googleMapsUrl)
+    || /^https:\/\/maps\.app\.goo\.gl\//.test(session.googleMapsUrl);
+  const hasAddress = session.venueAddress.trim().length > 0
+    && !session.venueAddress.toLowerCase().includes('akan ditampilkan');
+
+  if (hasGoogleMapsUrl && hasAddress) {
+    const query = `${session.venueName}, ${session.venueAddress}`;
+    const embedUrl = new URL('https://maps.google.com/maps');
+    embedUrl.searchParams.set('q', query);
+    embedUrl.searchParams.set('z', '16');
+    embedUrl.searchParams.set('output', 'embed');
+
+    const frame = document.createElement('iframe');
+    frame.className = 'schedule-map-frame';
+    frame.src = embedUrl.toString();
+    frame.title = `Peta lokasi ${session.sessionName} di ${session.venueName}`;
+    frame.loading = 'lazy';
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    frame.allowFullscreen = true;
+    map.appendChild(frame);
+    return map;
   }
+
+  const placeholder = createElement('p', 'schedule-map-placeholder', 'Peta lokasi akan ditampilkan setelah alamat resmi dikonfirmasi.');
+  placeholder.setAttribute('role', 'status');
+  map.appendChild(placeholder);
+  return map;
+}
+
+function renderWeddingContent(): void {
   setText('groom-name', weddingData.groomName);
   setText('bride-name', weddingData.brideName);
   setText('hero-cover-title', weddingData.heroCoverTitle);
@@ -77,19 +104,7 @@ function renderWeddingContent(): void {
     card.appendChild(divider);
     card.appendChild(createElement('p', 'schedule-venue', session.venueName));
     card.appendChild(createElement('p', 'schedule-address', session.venueAddress));
-    const link = createElement('a', 'button button-solid', 'Buka Google Maps');
-    link.href = session.googleMapsUrl;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.appendChild(createElement('span', 'sr-only', ' (membuka di tab baru)'));
-    if (/^https:\/\/(www\.)?google\.com\/maps\//.test(session.googleMapsUrl) || /^https:\/\/maps\.app\.goo\.gl\//.test(session.googleMapsUrl)) {
-      card.appendChild(link);
-    } else {
-      const pending = createElement('button', 'button button-outline', 'Lokasi segera diumumkan');
-      pending.type = 'button';
-      pending.disabled = true;
-      card.appendChild(pending);
-    }
+    card.appendChild(createGoogleMapsView(session));
     scheduleContainer?.appendChild(card);
   });
 

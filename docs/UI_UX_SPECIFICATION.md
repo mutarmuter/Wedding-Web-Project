@@ -37,16 +37,15 @@ Memberikan informasi waktu riil yang tersisa hingga saat sakral pernikahan Abdan
 
 States: Active Countdown state (angka detik berkurang per detik secara real-time); Expired/Finished state ('Alhamdulillah, Acara Telah Berlangsung').
 
-### Detail Jadwal Acara (Akad & Resepsi) & Peta Navigasi
+### Jadwal Akad Nikah & Peta Navigasi
 
-Menampilkan rincian tanggal, pemisahan jadwal sesi waktu antara Akad Nikah dan Resepsi, alamat lengkap statis, serta tautan langsung navigasi ke Google Maps.
+Menampilkan satu kartu Akad Nikah yang berada di tengah area jadwal, dengan rincian tanggal, waktu, alamat statis, serta tautan langsung navigasi ke Google Maps.
 
-- Kartu Informasi Sesi Akad Nikah (Hari, Tanggal, Jam, Lokasi)
-- Kartu Informasi Sesi Resepsi (Hari, Tanggal, Jam, Lokasi)
+- Satu kartu informasi Akad Nikah (Hari, Tanggal, Jam, Lokasi)
 - Tombol Navigasi 'Buka Google Maps' (Aksesibel min 48x48px target sentuh)
 - Teks Alamat Lengkap & Penanda Patokan Lokasi
 
-States: Normal display (vertikal 1 kolom di mobile, 2 kolom simetris di tablet/desktop); Button Hover, Active, dan Keyboard Focus-visible states.
+States: Kartu terpusat dengan lebar maksimum yang nyaman dibaca di mobile, tablet, dan desktop; Button Hover, Active, dan Keyboard Focus-visible states.
 
 ### Galeri Foto & Dokumentasi Carousel Animatif
 

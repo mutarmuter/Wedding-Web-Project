@@ -22,7 +22,7 @@ Acceptance: Parameter `?to=Nama+Tamu` berhasil diparsing menjadi nama undangan d
 
 - Mengembangkan skrip logika hitung mundur (Countdown Timer) dengan interval 1 detik dan penanganan kondisi waktu berakhir
 - Menerapkan atribut `aria-live="polite"` pada kontainer timer untuk aksesibilitas pembaca layar
-- Mendesain kartu modular jadwal terpisah antara Akad Nikah dan Resepsi (waktu, tanggal, dan alamat statis)
+- Mendesain satu kartu Akad Nikah terpusat dengan waktu, tanggal, dan alamat statis
 - Menyematkan tombol 'Buka Google Maps' dengan tautan navigasi resmi, ukuran sentuh minimal 48x48px, dan indikator focus keyboard
 
 Acceptance: Timer berjalan presisi secara real-time tanpa error konsol, susunan kartu jadwal rapi di mobile maupun desktop, dan tombol Google Maps membuka koordinat lokasi yang akurat.

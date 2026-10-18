@@ -67,24 +67,15 @@ export const scheduleSessions: ScheduleSession[] = [
     sessionName: 'Akad Nikah',
     dateFormatted: 'Senin, 9 November 2026',
     timeRange: '08.00 - 10.00 WIB',
-    venueName: 'Kediaman Mempelai Wanita',
-    venueAddress: 'Alamat lengkap lokasi akad nikah akan ditampilkan di sini. Silakan sesuaikan dengan data resmi acara.',
-    googleMapsUrl: '',
-  },
-  {
-    sessionId: 'resepsi',
-    sessionName: 'Resepsi',
-    dateFormatted: 'Senin, 9 November 2026',
-    timeRange: '11.00 - 14.00 WIB',
-    venueName: 'Gedung Resepsi Pernikahan',
-    venueAddress: 'Alamat lengkap lokasi resepsi akan ditampilkan di sini. Silakan sesuaikan dengan data resmi acara.',
-    googleMapsUrl: '',
+    venueName: 'KUA Banjarbaru Selatan',
+    venueAddress: 'Jl. Kerinci No.19 RT.04 RW.04 Kel. Loktabar Selatan Kec. Landasan Ulin, Kota Banjar Baru, Kalimantan Selatan',
+    googleMapsUrl: 'https://maps.app.goo.gl/qa7N4ht7nJJdsH8w8',
   },
 ];
 
 export const galleryItems: GalleryItem[] = [
-  { id: 'gallery-01', src: 'images/gallery/gallery-01.webp', smallSrc: 'images/gallery/gallery-01-small.webp', width: 800, height: 1000, altText: 'Momen kebersamaan dalam nuansa monokrom yang hangat', caption: 'Sebuah awal yang indah' },
-  { id: 'gallery-02', src: 'images/gallery/gallery-02.webp', smallSrc: 'images/gallery/gallery-02-small.webp', width: 800, height: 1000, altText: 'Potret elegan pernikahan dengan latar alam yang tenang', caption: 'Bersama dalam setiap langkah' },
-  { id: 'gallery-03', src: 'images/gallery/gallery-03.webp', smallSrc: 'images/gallery/gallery-03-small.webp', width: 800, height: 1000, altText: 'Detail rangkaian bunga sebagai simbol kasih sayang dan kebahagiaan', caption: 'Cinta yang terus bertumbuh' },
-  { id: 'gallery-04', src: 'images/gallery/gallery-04.webp', smallSrc: 'images/gallery/gallery-04-small.webp', width: 800, height: 1000, altText: 'Suasana romantis dan khidmat menyambut hari pernikahan', caption: 'Menulis kisah bersama' },
+  { id: 'gallery-01', src: 'images/gallery/gallery-01.webp', smallSrc: 'images/gallery/gallery-01-small.webp', width: 800, height: 1000, altText: 'Pasangan tertawa bersama di depan lemari kayu klasik', caption: 'Sebuah awal yang indah' },
+  { id: 'gallery-02', src: 'images/gallery/gallery-02.webp', smallSrc: 'images/gallery/gallery-02-small.webp', width: 800, height: 1000, altText: 'Cincin di jari pasangan saat tangan mereka bertaut', caption: 'Bersama dalam setiap langkah' },
+  { id: 'gallery-03', src: 'images/gallery/gallery-03.webp', smallSrc: 'images/gallery/gallery-03-small.webp', width: 800, height: 1000, altText: 'Pasangan berpose bersama di tangga gedung', caption: 'Cinta yang terus bertumbuh' },
+  { id: 'gallery-04', src: 'images/gallery/gallery-04.webp', smallSrc: 'images/gallery/gallery-04-small.webp', width: 800, height: 1000, altText: 'Pasangan berjalan bersama di dalam ruangan', caption: 'Menulis kisah bersama' },
 ];

@@ -47,7 +47,7 @@ wedding-abdan/
 │   └── robots.txt                  # Pengaturan index crawler mesin pencari
 ├── src/
 │   ├── config/
-│   │   ├── weddingData.ts          # Konfigurasi data statis (mempelai, tanggal, jadwal Akad/Resepsi, kutipan Arab)
+│   │   ├── weddingData.ts          # Konfigurasi data statis (mempelai, tanggal, jadwal Akad Nikah, kutipan Arab)
 │   │   └── wishesData.ts           # Kompilasi teks doa dan ucapan statis terkurasi dari keluarga & sahabat
 │   ├── scripts/
 │   │   ├── audioPlayer.ts          # Modul floating audio, browser autoplay policy unlocker, & aria-label updater
@@ -72,7 +72,7 @@ wedding-abdan/
 Penyimpanan dan konkurensi diimplementasikan dengan pendekatan Zero-Backend & Edge Delivery: 1. Penyimpanan Data: Tidak ada basis data server-side (seperti MySQL, PostgreSQL, atau Firestore) yang digunakan dalam proyek ini. Seluruh data acara, jadwal sesi, galeri foto, dan daftar ucapan doa dikonfigurasikan sebagai data objek statis TypeScript/JSON yang dikompilasi langsung ke dalam bundel aplikasi klien pada waktu build (build time). 2. Browser Storage: Penggunaan storage sisi klien dibatasi secara minimal hanya pada `sessionStorage` untuk mengingat preferensi status pemutaran musik pengguna (`wedding_abdan_audio_state: 'playing' | 'paused'`) selama satu sesi navigasi, mencegah musik mengulang dari awal secara tiba-tiba jika tamu memuat ulang (refresh) halaman. 3. Konkurensi & Skalabilitas: Karena seluruh artefak berwujud berkas statis (HTML, CSS, JS, WebP, MP3), aplikasi dilayani secara terdistribusi melalui jaringan global Edge CDN Cloudflare Pages / GitHub Pages. Tingkat konkurensi bersifat tidak terbatas (infinite edge concurrency) tanpa risiko race condition, deadlock basis data, atau penurunan performa server meskipun diakses ribuan tamu undangan secara bersamaan dari grup pesan instan.
 ## Integrations
 
-- Google Maps Navigation Integration - Integrasi tautan navigasi satu arah berbasis Universal URL (`https://www.google.com/maps/search/?api=1&query=LAT,LONG`) dengan parameter koordinat resmi acara pernikahan Abdan. Membuka aplikasi peta bawaan atau tab baru peramban dengan atribut `target="_blank"` dan `rel="noopener noreferrer"` tanpa membutuhkan Google Maps JavaScript API SDK atau API Key berbayar.
+- Google Maps Embed Integration - Peta lokasi Akad dimuat dalam iframe responsif dari Google Maps berdasarkan nama tempat dan alamat yang dikonfigurasi. Frame memakai lazy loading dan judul aksesibel; CSP Cloudflare membatasi frame ke domain Google Maps. Tidak ada Google Maps JavaScript SDK atau API key.
 - WhatsApp Click-to-Chat API - Integrasi tautan komunikasi eksternal menggunakan protokol URL Scheme WhatsApp (`https://wa.me/{nomorPonsel}?text={pesanEnkripsi}`) pada tombol kirim ucapan doa. Mengarahkan tamu secara instan ke aplikasi WhatsApp pribadi mempelai dengan draf pesan doa terisi otomatis.
 - HTML5 Web Audio & Media Element API - Pemanfaatan interface audio native browser untuk streaming berkas audio MP3 statis lokal dengan buffer hemat daya, penanganan event `play`, `pause`, dan `ended` (looping), serta implementasi graceful fallback saat browser memblokir autoplay sebelum adanya gestur interaksi.
 - Cloudflare Pages / GitHub Pages Deployment Webhook - Integrasi pipeline CI/CD Git provider yang secara otomatis memicu tahapan build Vite dan pembaruan cache edge global setiap kali ada push commit baru ke branch utama (main).

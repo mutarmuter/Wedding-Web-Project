@@ -14,7 +14,7 @@ Setelah pemilik mengizinkan publikasi, hubungkan repositori melalui dashboard Cl
 
 Tidak perlu Worker, Pages Functions, API key sisi klien, atau basis data. Semua sumber diproses menjadi HTML/CSS/JavaScript dan aset statis. Jangan mengaktifkan integrasi otomatis atau mengubah DNS sebelum mendapat persetujuan pemilik.
 
-`public/_headers` disalin ke keluaran build. CSP mengizinkan skrip, font, gambar, audio, dan koneksi dari origin sendiri. `style-src 'unsafe-inline'` diperlukan untuk gaya posisi carousel dan CSS yang disisipkan saat build. CSS kecil dimasukkan ke HTML agar tidak menambah permintaan yang memblokir tampilan awal; jalur font disesuaikan terhadap lokasi HTML. Tidak ada skrip inline atau CDN runtime. HTML selalu divalidasi ulang; hanya bundel bernama hash yang menggunakan cache immutable. Aset bernama tetap divalidasi ulang setelah satu hari.
+`public/_headers` disalin ke keluaran build. CSP mengizinkan skrip, font, gambar, audio, dan koneksi dari origin sendiri serta iframe peta dari Google Maps. `style-src 'unsafe-inline'` diperlukan untuk gaya posisi carousel dan CSS yang disisipkan saat build. CSS kecil dimasukkan ke HTML agar tidak menambah permintaan yang memblokir tampilan awal; jalur font disesuaikan terhadap lokasi HTML. Tidak ada skrip inline atau CDN runtime. HTML selalu divalidasi ulang; hanya bundel bernama hash yang menggunakan cache immutable. Aset bernama tetap divalidasi ulang setelah satu hari.
 
 ## GitHub Pages
 

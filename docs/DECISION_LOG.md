@@ -2,6 +2,10 @@
 
 Only the verbatim source input is user-provided. Generated recommendations are not confirmed decisions.
 
+## Arahan pengguna terbaru
+
+- 18 Oktober 2026: Pengguna meminta bagian Resepsi dihapus dari situs dan jadwal Akad Nikah ditampilkan terpusat. Arahan ini menggantikan spesifikasi terdahulu yang meminta dua kartu acara.
+
 ## Assumptions (unapproved)
 
 - Website dibangun sebagai arsitektur website statis murni (HTML/CSS/JS modern atau static generator) yang dapat di-deploy tanpa biaya server di GitHub Pages atau Cloudflare Pages.
