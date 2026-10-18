@@ -1,0 +1,57 @@
+{
+  "generator": "Prompt Atelier",
+  "version": "1.0.0",
+  "exportedAt": "2026-10-15T06:23:28.684Z",
+  "approvalId": "dd0ef9d6-bf00-44e5-a12b-8fda8c9b356d",
+  "approvalDate": "2026-10-15T06:23:26.888Z",
+  "files": [
+    {
+      "path": "MASTER_PROMPT.md",
+      "version": 1
+    },
+    {
+      "path": "AGENTS.md",
+      "version": 1
+    },
+    {
+      "path": "README.md",
+      "version": 1
+    },
+    {
+      "path": "docs/PRODUCT_REQUIREMENTS.md",
+      "version": 1
+    },
+    {
+      "path": "docs/MVP_SCOPE.md",
+      "version": 1
+    },
+    {
+      "path": "docs/DESIGN_DNA.md",
+      "version": 1
+    },
+    {
+      "path": "docs/UI_UX_SPECIFICATION.md",
+      "version": 1
+    },
+    {
+      "path": "docs/TECHNICAL_ARCHITECTURE.md",
+      "version": 1
+    },
+    {
+      "path": "docs/DATA_MODEL.md",
+      "version": 1
+    },
+    {
+      "path": "docs/IMPLEMENTATION_PLAN.md",
+      "version": 1
+    },
+    {
+      "path": "docs/ACCEPTANCE_CRITERIA.md",
+      "version": 1
+    },
+    {
+      "path": "docs/DECISION_LOG.md",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+name: Validasi dan Publikasi Undangan Statis
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publikasikan setelah data resmi, aset, dan keamanan diperiksa'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Ambil kode sumber
+        uses: actions/checkout@v4
+
+      - name: Siapkan Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Pasang dependensi terkunci
+        run: npm ci
+
+      - name: Periksa TypeScript dan uji fungsi
+        run: npm run lint && npm test
+
+      - name: Bangun berkas statis
+        run: npm run build
+
+      - name: Siapkan Pages
+        if: github.event_name == 'workflow_dispatch' && inputs.publish
+        uses: actions/configure-pages@v4
+
+      - name: Unggah hasil build
+        if: github.event_name == 'workflow_dispatch' && inputs.publish
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Publikasikan ke GitHub Pages
+        if: github.event_name == 'workflow_dispatch' && inputs.publish
+        id: deployment
+        uses: actions/deploy-pages@v4
