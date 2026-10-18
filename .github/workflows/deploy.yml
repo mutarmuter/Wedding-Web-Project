@@ -28,10 +28,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Ambil kode sumber
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Siapkan Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: 'npm'
