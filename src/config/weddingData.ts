@@ -38,12 +38,10 @@ export interface GalleryItem {
 }
 
 // ------------------------------------------------------------------
-// KONFIGURASI DATA PERNIKAHAN
-// Semua data di bawah masih merupakan PLACEHOLDER / ASUMSI.
-// Silakan ganti dengan data resmi dari kedua mempelai sebelum publikasi.
+// KONFIGURASI UNDANGAN PERNIKAHAN
 // ------------------------------------------------------------------
 export const weddingData: WeddingConfig = {
-  isDemo: true,
+  isDemo: false,
   groomName: 'Abdan',
   brideName: 'Tiara',
   groomFullName: 'Abdan',

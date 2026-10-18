@@ -10,7 +10,7 @@ Dokumen ini merangkum status teknis, hasil audit pengujian otomatis, kepatuhan a
 |---|---|---|---|
 | **Personalisasi Nama Tamu & Hero Cover Dinamis** | P0 | Selesai | Membaca parameter URL `?to=...`, sanitasi ketat karakter XSS, bidi/invisibel, pembatasan 60 karakter Unicode, injeksi DOM murni via `textContent` (tanpa `innerHTML`). Fallback: *"Tamu Undangan yang Berbahagia"*. |
 | **Hitung Mundur Waktu Acara (Countdown Timer)** | P0 | Selesai | Selisih waktu ISO-8601 berbasis zona waktu, tipografi tabular monospace (`JetBrains Mono`), notifikasi `aria-live="polite"` dibatasi 1x/menit, dan penanganan otomatis saat acara telah lewat. |
-| **Jadwal Akad Nikah Terpusat + Google Maps** | P0 | Selesai | Satu kartu Akad Nikah dengan lebar terukur, terpusat pada semua ukuran layar, target sentuh $\ge 48\times 48\text{ px}$, dan fokus visual `:focus-visible`. Pada mode demo, tombol terproteksi dengan status nonaktif *"Lokasi segera diumumkan"*. |
+| **Jadwal Akad Nikah Terpusat + Google Maps** | P0 | Selesai | Satu kartu Akad Nikah terpusat dengan alamat resmi dan peta Google Maps tertanam yang dimuat secara malas. |
 | **Bagian Teks Doa & Kutipan Bahasa Arab** | P1 | Selesai | QS. Ar-Rum: 21 dengan atribut semantik `lang="ar"` dan `dir="rtl"`, tipografi kaligrafi lokal teroptimasi (`Scheherazade New`), `line-height \ge 2.0`, terjemahan bahasa Indonesia stabil pada zoom 200%. |
 | **Galeri Foto & Carousel Pernikahan Animatif** | P1 | Selesai | Embla Carousel Core (zero-dependency) dengan gambar WebP multi-resolusi (`480w` & `800w`). Mendukung gestur swipe sentuh, navigasi keyboard panah, titik navigasi sentuh aman, tombol *"Jeda galeri / Lanjutkan galeri"*, jeda otomatis pada hover/fokus/tab switch, dan nonaktif total pada `prefers-reduced-motion: reduce`. |
 | **Pemutar Musik Latar Belakang (Background Audio Player)** | P1 | Selesai | Tombol mengambang 52x52px (`#audio-toggle`), mematuhi *Autoplay Policy* peramban modern (audio baru aktif setelah ada interaksi gestur pertama pengunjung), posisi dan status jeda tersimpan antar-navigasi via `sessionStorage`, serta *graceful fallback* bila berkas gagal dimuat. |
@@ -59,7 +59,7 @@ Dokumen ini merangkum status teknis, hasil audit pengujian otomatis, kepatuhan a
 
 ## 3. Kepatuhan Kebijakan Repositori & AGENTS.md
 
-- **Git & Deployment Discipline**: Repositori lokal belum di-commit/push ke cabang remote, mematuhi instruksi eksplisit bahwa commit dan deployment membutuhkan persetujuan langsung dari pengguna.
+- **Git & Deployment Discipline**: Kode sumber berada di cabang `master`; publikasi GitHub Pages menunggu aktivasi sumber Pages dan pemicu workflow manual.
 - **Tanpa Kredensial & Secrets**: Tidak ada token Cloudflare, token GitHub, atau informasi rahasia di dalam kode.
 - **Aset Mandiri (Self-Contained)**: Semua font (WOFF2) dan media tersimpan secara lokal di dalam folder `public/`, tanpa dependensi CDN pihak ketiga yang berpotensi memblokir render atau melanggar privasi tamu.
 - **Inline Critical CSS**: CSS terkompresi otomatis disisipkan langsung ke dalam berkas `dist/index.html` oleh plugin kustom Vite untuk mengeliminasi pemblokiran render FCP.
@@ -72,9 +72,9 @@ Sebelum website dipublikasikan secara resmi ke Cloudflare Pages atau GitHub Page
 
 1. [x] **Identitas Mempelai**: Terkonfirmasi resmi mempelai adalah **Abdan & Tiara** (terpasang di `src/config/weddingData.ts`, cover depan, dan metadata HTML).
 2. [x] **Jadwal & Waktu Acara**: Terkonfirmasi tanggal pernikahan **9 November 2026** (Senin, 9 November 2026) dengan target countdown ISO-8601 `2026-11-09T08:00:00+07:00`.
-3. [ ] **Lokasi & Google Maps**: Mengisi alamat lengkap serta tautan Google Maps resmi (`https://maps.app.goo.gl/...`) agar tombol navigasi aktif.
+3. [x] **Lokasi & Google Maps**: Alamat resmi KUA Banjarbaru Selatan dan tautan pin Google Maps telah dikonfigurasi; situs menyematkan tampilan peta.
 4. [ ] **Nomor WhatsApp**: Memasukkan nomor WhatsApp pengantin (format internasional tanpa tanda `+`, contoh `6281234567890`) untuk mengaktifkan tombol kirim ucapan restu.
-5. [ ] **Foto Dokumentasi Resmi**: Mengganti foto ilustrasi di `public/images/hero/` dan `public/images/gallery/` dengan foto asli mempelai berformat WebP terkompresi.
+5. [x] **Foto Dokumentasi Resmi**: Foto dari sumber lokal telah dioptimasi ke WebP untuk `public/images/hero/` dan `public/images/gallery/`.
 6. [ ] **Musik Latar**: Mengganti `public/audio/background-melody.mp3` dengan lagu pilihan pengantin berformat MP3/AAC terkompresi (< 3-5 MB).
-7. [ ] **Menonaktifkan Mode Demo**: Mengubah `isDemo: false` pada `src/config/weddingData.ts` untuk menghapus spanduk pratinjau.
-8. [ ] **Otorisasi Publikasi**: Memberikan izin untuk melakukan `git commit`, `git push`, dan aktivasi deployment Cloudflare Pages / GitHub Pages.
+7. [x] **Menonaktifkan Mode Demo**: `isDemo: false`; teks alternatif foto kini mengidentifikasi potret mempelai.
+8. [x] **Otorisasi Publikasi**: Pengguna meminta situs diterbitkan melalui GitHub Pages.

@@ -4,12 +4,12 @@ import AxeBuilder from '@axe-core/playwright';
 test('personalisasi aman dan semua aset termuat', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
-  await page.goto('/?to=' + encodeURIComponent('<img src=x onerror=alert(1)>Budi & Keluarga'));
+  await page.goto('/?to=' + encodeURIComponent('<img src=x onerror=alert(1)>Budi & Keluarga'), { waitUntil: 'domcontentloaded' });
   await expect(page.locator('#guest-name')).toHaveText('Budi & Keluarga');
   await expect(page.locator('#guest-name img')).toHaveCount(0);
   await page.locator('#galeri').scrollIntoViewIfNeeded();
   await expect.poll(() => page.locator('img').evaluateAll((images) => images.every((image) => image.complete && image.naturalWidth > 0))).toBe(true);
-  await expect(page.locator('#schedule-cards article')).toHaveCount(2);
+  await expect(page.locator('#schedule-cards article')).toHaveCount(1);
   await expect(page.locator('#ucapan')).toHaveCount(0);
   await expect(page.locator('.header-link')).toHaveText('Hari Bahagia');
   await expect(page.locator('#groom-name')).toHaveText('Abdan');
@@ -23,7 +23,7 @@ test('personalisasi aman dan semua aset termuat', async ({ page }) => {
 for (const width of [320, 375, 768, 1440, 2560]) {
   test(`tata letak ${width}px dan teks 200% tanpa luapan`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
-    await page.goto('/?to=' + 'NamaPanjang'.repeat(10));
+    await page.goto('/?to=' + 'NamaPanjang'.repeat(10), { waitUntil: 'domcontentloaded' });
     await page.evaluate(() => document.fonts.ready);
     const overflow = () => page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     expect(await overflow()).toBe(false);
@@ -34,7 +34,7 @@ for (const width of [320, 375, 768, 1440, 2560]) {
 
 test('reduced motion, kontrol galeri, dan audit aksesibilitas', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/');
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('#gallery-autoplay')).toBeDisabled();
   await page.locator('#gallery-next').click();
   await expect(page.locator('#gallery-dots button').nth(1)).toHaveAttribute('aria-current', 'true');
@@ -47,7 +47,7 @@ test('reduced motion, kontrol galeri, dan audit aksesibilitas', async ({ page })
 });
 
 test('audio tidak autoplay dan dapat diputar serta dijeda', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
   expect(await page.locator('audio').evaluate((audio) => audio.paused)).toBe(true);
   await page.locator('#audio-toggle').click();
   await expect(page.locator('#audio-toggle')).toHaveAttribute('aria-pressed', 'true');
@@ -59,7 +59,7 @@ test('audio tidak autoplay dan dapat diputar serta dijeda', async ({ page }) => 
 });
 
 test('galeri dapat dijeda permanen dan dinavigasi keyboard', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
   await page.locator('#gallery-autoplay').click();
   await expect(page.locator('#gallery-autoplay')).toHaveText('Lanjutkan galeri');
   await page.locator('#gallery-carousel').focus();
