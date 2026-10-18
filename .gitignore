@@ -37,3 +37,6 @@ build/
 test-results/
 playwright-report/
 reports/
+
+# Foto sumber lokal; situs hanya memuat versi WebP teroptimasi dari public/.
+/source-assets/

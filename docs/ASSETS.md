@@ -1,16 +1,13 @@
 # Aset dan Perizinan
 
-## Foto Contoh
+## Foto
 
-Foto berikut diunduh sebagai WebP terkompresi dari Unsplash untuk pratinjau, **bukan dokumentasi Abdan atau pasangannya**. Varian kecil selebar 480px mengurangi transfer pada ponsel. Aset asli tetap lokal, tanpa permintaan gambar ke pihak ketiga saat tamu membuka situs.
+Foto sumber JPEG bernama `WhatsApp Image*.jpeg` disimpan lokal di `source-assets/images/hero/` dan `source-assets/images/gallery/`. Situs menggunakan turunan WebP rasio 4:5 yang dipangkas dan dioptimalkan; varian kecil selebar 480px mengurangi transfer pada ponsel. Sumber JPEG dikecualikan dari Git dan direktori publik agar hanya aset WebP yang terpublikasi.
 
-- Hero: `https://images.unsplash.com/photo-1519741497674-611481863552`
-- Galeri 01: `https://images.unsplash.com/photo-1511285560929-80b456fea0bc`
-- Galeri 02: `https://images.unsplash.com/photo-1523438885200-e635ba2c371e`
-- Galeri 03: `https://images.unsplash.com/photo-1529636798458-92182e662485`
-- Galeri 04: `https://images.unsplash.com/photo-1511795409834-ef04bbd61622`
+- Hero: `public/images/hero/whatsapp-hero.webp` dan `whatsapp-hero-small.webp`
+- Galeri: `public/images/gallery/whatsapp-gallery-01.webp` sampai `whatsapp-gallery-09.webp`, masing-masing dengan varian `-small.webp`
 
-Ganti dengan foto berizin milik mempelai sebelum publikasi. Hak atas wajah, dokumentasi, dan konteks penggunaan perlu diperiksa oleh pemilik acara; catatan sumber ini bukan jaminan izin model/property release.
+Asumsi: pemilik acara memiliki izin untuk memublikasikan foto-foto tersebut.
 
 ## Font Lokal
 

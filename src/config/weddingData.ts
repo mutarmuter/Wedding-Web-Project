@@ -55,8 +55,8 @@ export const weddingData: WeddingConfig = {
   targetEventTimestamp: '2026-11-09T08:00:00+07:00',
   whatsappRecipientNumber: '', // Isi dengan nomor internasional tanpa tanda +, contoh: 6281234567890
   audioSource: 'audio/background-melody.mp3',
-  heroImage: 'images/hero/cover-photo.webp',
-  heroImageSmall: 'images/hero/cover-photo-small.webp',
+  heroImage: 'images/hero/whatsapp-hero.webp',
+  heroImageSmall: 'images/hero/whatsapp-hero-small.webp',
 };
 
 export const scheduleSessions: ScheduleSession[] = [
@@ -72,8 +72,13 @@ export const scheduleSessions: ScheduleSession[] = [
 ];
 
 export const galleryItems: GalleryItem[] = [
-  { id: 'gallery-01', src: 'images/gallery/gallery-01.webp', smallSrc: 'images/gallery/gallery-01-small.webp', width: 800, height: 1000, altText: 'Pasangan tertawa bersama di depan lemari kayu klasik', caption: 'Sebuah awal yang indah' },
-  { id: 'gallery-02', src: 'images/gallery/gallery-02.webp', smallSrc: 'images/gallery/gallery-02-small.webp', width: 800, height: 1000, altText: 'Cincin di jari pasangan saat tangan mereka bertaut', caption: 'Bersama dalam setiap langkah' },
-  { id: 'gallery-03', src: 'images/gallery/gallery-03.webp', smallSrc: 'images/gallery/gallery-03-small.webp', width: 800, height: 1000, altText: 'Pasangan berpose bersama di tangga gedung', caption: 'Cinta yang terus bertumbuh' },
-  { id: 'gallery-04', src: 'images/gallery/gallery-04.webp', smallSrc: 'images/gallery/gallery-04-small.webp', width: 800, height: 1000, altText: 'Pasangan berjalan bersama di dalam ruangan', caption: 'Menulis kisah bersama' },
+  { id: 'gallery-01', src: 'images/gallery/whatsapp-gallery-01.webp', smallSrc: 'images/gallery/whatsapp-gallery-01-small.webp', width: 800, height: 1000, altText: 'Abdan dan Tiara menuruni tangga bersama', caption: 'Langkah menuju hari bahagia' },
+  { id: 'gallery-02', src: 'images/gallery/whatsapp-gallery-02.webp', smallSrc: 'images/gallery/whatsapp-gallery-02-small.webp', width: 800, height: 1000, altText: 'Abdan dan Tiara berjalan menuruni tangga melingkar', caption: 'Setiap langkah berarti' },
+  { id: 'gallery-03', src: 'images/gallery/whatsapp-gallery-03.webp', smallSrc: 'images/gallery/whatsapp-gallery-03-small.webp', width: 800, height: 1000, altText: 'Abdan dan Tiara berjalan bersama di dalam ruangan', caption: 'Dalam perjalanan yang sama' },
+  { id: 'gallery-04', src: 'images/gallery/whatsapp-gallery-04.webp', smallSrc: 'images/gallery/whatsapp-gallery-04-small.webp', width: 800, height: 1000, altText: 'Tiara tersenyum kepada Abdan di ruang bernuansa kayu', caption: 'Senyum yang selalu dirindukan' },
+  { id: 'gallery-05', src: 'images/gallery/whatsapp-gallery-05.webp', smallSrc: 'images/gallery/whatsapp-gallery-05-small.webp', width: 800, height: 1000, altText: 'Abdan berlutut di hadapan Tiara dalam momen lamaran', caption: 'Satu janji, satu harapan' },
+  { id: 'gallery-06', src: 'images/gallery/whatsapp-gallery-06.webp', smallSrc: 'images/gallery/whatsapp-gallery-06-small.webp', width: 800, height: 1000, altText: 'Pantulan Abdan dan Tiara dalam bingkai cermin berukir', caption: 'Kisah indah yang terpantul' },
+  { id: 'gallery-07', src: 'images/gallery/whatsapp-gallery-07.webp', smallSrc: 'images/gallery/whatsapp-gallery-07-small.webp', width: 800, height: 1000, altText: 'Abdan berlutut di hadapan Tiara dalam momen lamaran', caption: 'Jawaban yang dinanti' },
+  { id: 'gallery-08', src: 'images/gallery/whatsapp-gallery-08.webp', smallSrc: 'images/gallery/whatsapp-gallery-08-small.webp', width: 800, height: 1000, altText: 'Abdan dan Tiara berjalan bersama melewati ruang berornamen kayu', caption: 'Menapaki hari bersama' },
+  { id: 'gallery-09', src: 'images/gallery/whatsapp-gallery-09.webp', smallSrc: 'images/gallery/whatsapp-gallery-09-small.webp', width: 800, height: 1000, altText: 'Abdan dan Tiara berjalan beriringan di dalam ruangan', caption: 'Terus berjalan berdampingan' },
 ];

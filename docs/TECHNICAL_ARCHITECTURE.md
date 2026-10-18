@@ -34,11 +34,12 @@ wedding-abdan/
 │   │   └── scheherazade-new/       # Font kaligrafi Arab lokal (WOFF2)
 │   ├── images/
 │   │   ├── hero/
-│   │   │   └── cover-photo.webp    # Foto utama cover (WebP teroptimasi, fetchpriority=high)
+│   │   │   ├── whatsapp-hero.webp       # Foto utama cover (WebP teroptimasi)
+│   │   │   └── whatsapp-hero-small.webp # Varian kecil untuk layar ponsel
 │   │   ├── gallery/
-│   │   │   ├── gallery-01.webp     # Foto carousel dokumentasi pernikahan
-│   │   │   ├── gallery-02.webp
-│   │   │   └── gallery-03.webp
+│   │   │   ├── whatsapp-gallery-01.webp # Foto carousel WebP rasio 4:5
+│   │   │   ├── whatsapp-gallery-01-small.webp
+│   │   │   └── ...                       # Galeri 01–09 beserta varian kecil
 │   │   └── icons/
 │   │       ├── play.svg            # Ikon kontrol audio SVG
 │   │       ├── pause.svg
